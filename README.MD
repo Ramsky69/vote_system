@@ -87,3 +87,7 @@ The number of unique votes in Firestore matched the number of unique votes gener
 - **Cloud Run**: Enabled flexible scaling, but cold starts could add slight delay.
 - **Edge Computing**: Reduced server load and allowed distributed data generation, but increased system complexity.
 - **Idempotency**: Ensured correctness and consistency, but required additional logic in the worker.
+
+
+## Acknowledgments
+CS323 - Distributed Systems Laboratory Activity
