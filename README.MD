@@ -91,3 +91,5 @@ The number of unique votes in Firestore matched the number of unique votes gener
 
 ## Acknowledgments
 CS323 - Distributed Systems Laboratory Activity
+
+Developed using Google Cloud Platform (GCP)
