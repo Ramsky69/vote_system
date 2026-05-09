@@ -1,0 +1,51 @@
+<svg width="680" height="340" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Distributed Voting System Architecture</title>
+<desc>Edge nodes send votes via HTTP POST to Cloud Run API, which publishes to Pub/Sub. Worker service pulls messages from Pub/Sub and writes votes to Firestore.</desc>
+<style>
+  .box-gray { fill: #F1EFE8; stroke: #5F5E5A; }
+  .box-blue { fill: #E6F1FB; stroke: #185FA5; }
+  .text-title-gray { fill: #444441; font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 500; }
+  .text-sub-gray { fill: #5F5E5A; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; }
+  .text-title-blue { fill: #0C447C; font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 500; }
+  .text-sub-blue { fill: #185FA5; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; }
+  .arr { stroke: #73726c; stroke-width: 1.5; fill: none; }
+</style>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#73726c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- Edge Nodes (stacked appearance) -->
+<rect x="48" y="68" width="140" height="56" rx="8" class="box-gray" stroke-width="0.5" opacity="0.35"/>
+<rect x="44" y="64" width="140" height="56" rx="8" class="box-gray" stroke-width="0.5" opacity="0.6"/>
+<rect x="40" y="60" width="140" height="56" rx="8" class="box-gray" stroke-width="0.5"/>
+<text x="110" y="82" text-anchor="middle" dominant-baseline="central" class="text-title-gray">Edge nodes</text>
+<text x="110" y="100" text-anchor="middle" dominant-baseline="central" class="text-sub-gray">Distributed clients</text>
+
+<!-- Cloud Run API -->
+<rect x="220" y="60" width="140" height="56" rx="8" class="box-blue" stroke-width="0.5"/>
+<text x="290" y="80" text-anchor="middle" dominant-baseline="central" class="text-title-blue">Cloud Run API</text>
+<text x="290" y="98" text-anchor="middle" dominant-baseline="central" class="text-sub-blue">/vote endpoint</text>
+
+<!-- Pub/Sub -->
+<rect x="400" y="60" width="140" height="56" rx="8" class="box-blue" stroke-width="0.5"/>
+<text x="470" y="80" text-anchor="middle" dominant-baseline="central" class="text-title-blue">Pub/Sub</text>
+<text x="470" y="98" text-anchor="middle" dominant-baseline="central" class="text-sub-blue">vote-topic</text>
+
+<!-- Worker -->
+<rect x="400" y="230" width="140" height="56" rx="8" class="box-blue" stroke-width="0.5"/>
+<text x="470" y="250" text-anchor="middle" dominant-baseline="central" class="text-title-blue">Worker service</text>
+<text x="470" y="268" text-anchor="middle" dominant-baseline="central" class="text-sub-blue">Async processing</text>
+
+<!-- Firestore -->
+<rect x="220" y="230" width="140" height="56" rx="8" class="box-blue" stroke-width="0.5"/>
+<text x="290" y="250" text-anchor="middle" dominant-baseline="central" class="text-title-blue">Firestore</text>
+<text x="290" y="268" text-anchor="middle" dominant-baseline="central" class="text-sub-blue">Vote storage</text>
+
+<!-- Connectors -->
+<line x1="194" y1="88" x2="214" y2="88" class="arr" marker-end="url(#arrow)"/>
+<line x1="364" y1="88" x2="394" y2="88" class="arr" marker-end="url(#arrow)"/>
+<line x1="470" y1="122" x2="470" y2="224" class="arr" marker-end="url(#arrow)"/>
+<line x1="394" y1="258" x2="366" y2="258" class="arr" marker-end="url(#arrow)"/>
+</svg>
