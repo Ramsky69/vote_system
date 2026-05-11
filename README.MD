@@ -91,14 +91,14 @@ Idempotency was enforced using a composite document ID (`user_id` + `poll_id`), 
 
 ## Individual Reflections
 
-### Abraham Roxas (Ramsky)
+### Abraham Ronaldson Roxas (Ramsky69)
 I handled the initial repository setup and pushed the main code files for the API, worker, and edge node. The GCP side took a while because I had to enable several APIs, configure the service account, and fix some IAM permissions before the deployment would work. Getting the Cloud Run API to publish to Pub/Sub also gave me some authentication errors at first. Once everything was deployed though, the rest of the system started running smoothly. The most interesting thing for me was seeing the API keep accepting votes even when the worker was disabled — that's when fault tolerance actually clicked.
 
-### Jiane Sarting
+### Jiane Rackyle Sarting (rackyroadt)
 I worked on improving the documentation, adding tracking counters and logging to the worker, and making the architecture diagram for the project. Writing the logging part helped me understand how the worker handles each message and how idempotency prevents duplicates. The architecture diagram was useful because it forced me to visualize how all the components actually connect. During testing I noticed the queued votes coming through in a burst once the worker was restored, which was the part that made distributed processing feel real.
 
-### Samuel Vincent Aque
+### Samuel Vincent Aque (BacnonCod)
 I added the acknowledgments section and helped review the README so the documentation was complete. While testing, I watched how the votes moved from our laptops to Firestore, and it was kinda satisfying seeing the data appear in real time. The part where we stopped the worker on purpose and the system didn't break was when I started to understand what fault tolerance really meant.
 
-### John Lloyd Arvin Bajolo
+### John Lloyd Arvin Bajolo (johnskie149)
 I worked on cleaning up the documentation formatting and ran the edge node during testing. The setup was confusing at first because of all the services involved, but once the pipeline was running it made more sense. Watching the system recover after we stopped the worker was my favorite part because it showed how distributed systems handle failure without us doing anything manual.
